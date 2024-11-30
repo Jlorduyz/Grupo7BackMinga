@@ -1,15 +1,15 @@
-import User from "../../models/User.js";
+import Comment from "../../models/Comment.js";
 
-let deleteUser = async (req, res, next) => {
+let deleteComment = async (req, res, next) => {
     try {
-        let destroy = await User.findByIdAndDelete(req.params.id)
+        let destroy = await Comment.findByIdAndDelete(req.params.id)
         if (destroy) {
             return res.status(200).json({
                 response: destroy
             })
         }else{
             return res.status(404).json({
-                message: "User not found"
+                message: "Comment not found"
             })
         }
     } catch (error) {
@@ -17,4 +17,4 @@ let deleteUser = async (req, res, next) => {
     }
 }
 
-export { deleteUser }
+export { deleteComment }
