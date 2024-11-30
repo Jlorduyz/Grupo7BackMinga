@@ -7,7 +7,7 @@ const schema = new Schema({
     webSite:{type: String,required: true},
     description:{type: String,required: true},
     photo:{type: String,required: true},
-    userId:{type: Schema.Types.ObjectId,ref: "User",required: true},
+    userId:{type: Schema.Types.ObjectId,ref: "users",required: true},
     active:{type: Boolean,required: true}
 },{
     timestamps: true,
