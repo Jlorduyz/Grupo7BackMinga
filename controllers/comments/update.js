@@ -1,24 +1,25 @@
-import User from "../../models/User.js";
+import Comment from "../../models/Comment.js";
 
-const updateUser = async (req, res,next) => {
+const updateComment = async (req, res, next) => {
     try {
-        let upd = await User.findOneAndUpdate(
+        let upd = await Comment.findOneAndUpdate(
             { _id: req.params.id },
             req.body,
-            { new: true })
+            { new: true }
+        )
         if (upd) {
             return res.status(200).json({
                 response: {
                     upd
                 },
                 message: {
-                    msg: "User updated"
+                    msg: "Comment updated"
                 }
             })
         } else {
             return res.status(404).json({
                 message: {
-                    msg: "User not found"
+                    msg: "Comment not found"
                 }
             })
         }
@@ -27,4 +28,5 @@ const updateUser = async (req, res,next) => {
         next(error)
     }
 }
-export { updateUser }
+
+export {updateComment} 

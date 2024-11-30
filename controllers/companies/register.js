@@ -1,17 +1,14 @@
-import User from "../../models/User.js";
-
+import Company from "../../models/Company.js";
 
 let register = async (req, res, next) => {
     try {
-        let user = req.body
-        user.online = false
-        let all = await User.create(user)
+        let company = req.body
+        let all = await Company.create(company)
         return res.status(201).json({
             response: all
         })
-
     } catch (error) {
-next(error)
+        next(error)
     }
 }
 

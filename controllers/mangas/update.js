@@ -1,30 +1,31 @@
-import User from "../../models/User.js";
+import Manga from "../../models/Manga.js";
 
-const updateUser = async (req, res,next) => {
+const updateManga = async (req, res, next) => {
     try {
-        let upd = await User.findOneAndUpdate(
-            { _id: req.params.id },
+        let upd = await Manga.findOneAndUpdate(
+            { _id: req.params.id},
             req.body,
-            { new: true })
+            { new: true }
+        )
         if (upd) {
             return res.status(200).json({
                 response: {
                     upd
                 },
                 message: {
-                    msg: "User updated"
+                    msg: "Manga updated"
                 }
             })
         } else {
             return res.status(404).json({
                 message: {
-                    msg: "User not found"
+                    msg: "Manga not found"
                 }
             })
         }
-
     } catch (error) {
         next(error)
     }
 }
-export { updateUser }
+
+export { updateManga }
