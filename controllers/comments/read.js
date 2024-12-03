@@ -11,4 +11,4 @@ let allComments = async (req, res, next) => {
     }
 }
 
-export { allComments }
+export  {allComments}
