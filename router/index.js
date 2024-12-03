@@ -8,5 +8,8 @@ const router = Router();
 router.use('/users',userRouter)
 router.use('/companies',companyRouter)
 router.use('/mangas',mangaRouter)
+router.use('/mangas',mangaRouter)
+router.use('/mangas',mangaRouter)
+
 
 export default router
