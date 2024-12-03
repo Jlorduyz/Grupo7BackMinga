@@ -10,3 +10,5 @@ let allComments = async (req, res, next) => {
         next(error)
     }
 }
+
+export  {allComments}
