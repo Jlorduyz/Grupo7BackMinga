@@ -7,10 +7,10 @@ import passport from "../middlewares/passport.js";
 
 const router = Router();
 
-router.get('/all',passport.authenticate("jwt", {session: false}),allMangas)
-router.get('/authors/id/:id',passport.authenticate("jwt", {session: false}),mangasByID)
-router.get('/categories/id/:id',passport.authenticate("jwt", {session: false}),mangasByCategoryID)
-router.get('/description/id/:id',passport.authenticate("jwt", {session: false}),mangasDescripitionByID)
+router.get('/all',allMangas)
+router.get('/authors/id/:id',mangasByID)
+router.get('/categories/id/:id',mangasByCategoryID)
+router.get('/description/id/:id',mangasDescripitionByID)
 router.post('/create',passport.authenticate("jwt", {session: false}),create)
 router.put('/update/:id',passport.authenticate("jwt", {session: false}),updateManga)
 router.delete('/delete/:id',passport.authenticate("jwt", {session: false}),deleteManga)
