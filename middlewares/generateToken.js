@@ -4,7 +4,7 @@ export default (req, res, next) => {
     const token = jwt.sign(
         {email: req.body.email || req.user.email},
         process.env.SECRET_KEY,
-        {expiresIn: 60*5}
+        {expiresIn: 60*60*24}
     )
     req.token = token
     return next()
