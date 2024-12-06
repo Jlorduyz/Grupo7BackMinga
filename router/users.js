@@ -5,12 +5,13 @@ import { allUsers, userByID } from "../controllers/users/read.js";
 import { deleteUser } from "../controllers/users/delete.js";
 import accountExist from "../middlewares/accountExist.js";
 import createHash from "../middlewares/createHash.js";
-import validator from "../middlewares/validator.js";
 import passport from "../middlewares/passport.js";
+import { oneUser } from "../controllers/users/read.js";
 
 const router = Router();
 
 router.get('/all',passport.authenticate("jwt", {session: false}),allUsers)
+router.get('/validationToken',passport.authenticate("jwt", {session: false}),oneUser)
 router.get('/id/:id',passport.authenticate("jwt", {session: false}),userByID)
 router.post('/register',accountExist,createHash,register)
 router.put('/update/:id',passport.authenticate("jwt", {session: false}),updateUser)
