@@ -28,6 +28,19 @@ let mangasByID = async (req, res, next) => {
         next(error)
     }    
 }
+
+
+let ByOnlyID = async (req, res, next) => {
+    try {
+        let id = req.params.id
+        let mangas = await Manga.find({ _id: id })
+        return res.status(200).json({
+            response: mangas
+        })
+    } catch (error) {
+        next(error)
+    }    
+}
 let mangasDescripitionByID = async (req, res, next) => {
     try {
         let id = req.params.id
@@ -52,4 +65,4 @@ let mangasByCategoryID = async (req, res, next) => {
         next(error)
     }    
 }
-export { allMangas, mangasByID, mangasByCategoryID,mangasDescripitionByID }
+export { allMangas, mangasByID, mangasByCategoryID,mangasDescripitionByID, ByOnlyID }
