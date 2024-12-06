@@ -6,7 +6,7 @@ import { deleteManga } from "../controllers/mangas/delete.js";
 import passport from "../middlewares/passport.js";
 const router = Router();
 
-router.get('/all',passport.authenticate("jwt", {session: false}),allMangas)
+router.get('/all',allMangas)
 router.get('/id/:id',passport.authenticate("jwt", {session: false}),mangasByID)
 router.post('/create',passport.authenticate("jwt", {session: false}),create)
 router.put('/update/:id',passport.authenticate("jwt", {session: false}),updateManga)
