@@ -7,6 +7,7 @@ const schema = new Schema({
     author_id:{type: Schema.Types.ObjectId,ref: "authors"},
     company_id:{type: Schema.Types.ObjectId,ref: "companies"},
     reaction:{type: String,required: true},
+    userId:{type: Schema.Types.ObjectId,ref: "users",required: true},
 }
 );
 
