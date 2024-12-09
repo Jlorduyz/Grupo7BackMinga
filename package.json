@@ -10,7 +10,9 @@
     "dataUsers": "node ./models/data/users.js",
     "dataAuthors": "node ./models/data/authors.js",
     "dataCategories": "node ./models/data/categories.js",
-    "dataData": "node ./models/data/data.js"
+    "dataData": "node ./models/data/data.js",
+    "dataComments": "node ./models/data/comments.js"
+
   },
   "keywords": [],
   "author": "",
@@ -27,6 +29,7 @@
     "morgan": "^1.10.0",
     "passport": "^0.7.0",
     "passport-google-oauth": "^2.0.0",
+    "passport-google-oauth20": "^2.0.0",
     "passport-jwt": "^4.0.1"
   },
   "devDependencies": {
