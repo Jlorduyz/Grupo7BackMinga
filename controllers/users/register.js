@@ -1,3 +1,4 @@
+import { response } from "express";
 import User from "../../models/User.js";
 
 
@@ -6,14 +7,19 @@ let register = async (req, res, next) => {
         let user = req.body
         user.online = false
         user.role = 0
+        
         let all = await User.create(user)
         return res.status(201).json({
             response: all
-        })
+        }
+    )
+        
+        
 
     } catch (error) {
 next(error)
     }
+    
 }
 
 export { register }
