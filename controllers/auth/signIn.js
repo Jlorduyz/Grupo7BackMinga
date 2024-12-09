@@ -11,8 +11,8 @@ export default async (req, res, next) => {
             message: 'Signed in',
             user:{
                 email: req.user.email,
-                photo: req.user.photo,
-                role: req.user.role
+                photo: req.user.photo ,
+                role: req.user.role 
             },
             token: req.token
         })
