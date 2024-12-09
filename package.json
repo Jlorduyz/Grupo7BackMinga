@@ -10,7 +10,9 @@
     "dataUsers": "node ./models/data/users.js",
     "dataAuthors": "node ./models/data/authors.js",
     "dataCategories": "node ./models/data/categories.js",
-    "dataData": "node ./models/data/data.js"
+    "dataData": "node ./models/data/data.js",
+    "dataComments": "node ./models/data/comments.js"
+
   },
   "keywords": [],
   "author": "",
